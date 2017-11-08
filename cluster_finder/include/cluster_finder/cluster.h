@@ -15,8 +15,6 @@ using namespace std;
 #define CYAN "\x1b[36m"
 #define COLOR_RESET "\x1b[0m"
 
-namespace laser_analysis
-{
 	class Cluster
 	{
 	private:
@@ -30,6 +28,7 @@ namespace laser_analysis
 		double sum_x;
 		double sum_y;
 		double sum_x2;
+		double sum_y2;
 		double sum_xy;
 		
 	public:
@@ -43,9 +42,11 @@ namespace laser_analysis
 		
 		void addMember(geometry_msgs::Point32 p);
 		vector<geometry_msgs::Point32> &getMembers();
-		int memberSize();
+		double getSlope();
+		double getYIntercept();
+		size_t size();
 		pair<double, double> getTrend();
+		void clear();
 	};
-}
 
 #endif
