@@ -3,6 +3,8 @@
 #include<sensor_msgs/LaserScan.h>
 #include<cluster_finder/Clusters.h>
 #include<cluster_finder/cluster.h>
+#include<laser_convertor/laser_convertor.h>
+#include<sensor_msgs/PointCloud.h>
 #include<iostream>
 #include<utility>
 #include<vector>
@@ -20,7 +22,7 @@ ros::Publisher cluster_pub_;
 
 void laserCB(const sensor_msgs::LaserScan::ConstPtr &scan)
 {
-
+	
 }
 int main(int argc, char** argv)
 {
