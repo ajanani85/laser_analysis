@@ -1,7 +1,9 @@
 geometry_msgs/Point32[] points
-int32 leftBound
+int32 clusterIndex
 int32 rightBound
+int32 leftBound
 float64 distanceToLeftCluster
 float64 distanceToRightCluster
 float64 slope
 float64 y_intercept
+float64 angle_with_x_axis

@@ -2,6 +2,7 @@
 #define CLUSTER_H_
 
 #include <geometry_msgs/Point32.h>
+#include<sensor_msgs/PointCloud.h>
 #include <vector>
 #include <utility>
 
@@ -18,7 +19,7 @@ using namespace std;
 	class Cluster
 	{
 	private:
-		vector<geometry_msgs::Point32> members;
+		sensor_msgs::PointCloud members;
 				
 		double slope;
 		double y_intercept;
@@ -30,6 +31,7 @@ using namespace std;
 		double sum_x2;
 		double sum_y2;
 		double sum_xy;
+		double angle_with_x_axis;
 		
 	public:
 		int leftBound;
@@ -41,12 +43,13 @@ using namespace std;
 		~Cluster();
 		
 		void addMember(geometry_msgs::Point32 p);
-		vector<geometry_msgs::Point32> &getMembers();
+		void getMembers(sensor_msgs::PointCloud &p);
 		double getSlope();
 		double getYIntercept();
 		size_t size();
 		pair<double, double> getTrend();
 		void clear();
+		double getAngleWithXAxis();
 	};
 
 #endif
